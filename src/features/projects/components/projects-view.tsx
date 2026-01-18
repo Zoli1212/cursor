@@ -60,7 +60,7 @@ export const ProjectsView = () => {
                 "text-4xl md:text-5xl font-semibold",
                 font.className,
               )}>
-                AI-Polar
+                AI First
               </h1>
             </div>
 

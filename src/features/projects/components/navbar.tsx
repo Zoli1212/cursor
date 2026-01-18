@@ -95,7 +95,7 @@ export const Navbar = ({
                         font.className,
                       )}
                     >
-                      AI-Polar
+                      AI First
                     </span>
                   </Link>
                 </Button>
