@@ -82,11 +82,20 @@ export async function POST(request: Request) {
       .replace("{nextLines}", nextLines || "")
       .replace("{lineNumber}", lineNumber.toString());
 
+    console.log("Suggestion request:", {
+      fileName,
+      textBeforeCursor,
+      textAfterCursor,
+      currentLine,
+    });
+
     const { output } = await generateText({
-      model: anthropic("claude-3-7-sonnet-20250219"),
+      model: anthropic("claude-sonnet-4-5-20250929"),
       output: Output.object({ schema: suggestionSchema }),
       prompt,
     });
+
+    console.log("AI output:", output);
 
     return NextResponse.json({ suggestion: output.suggestion })
   } catch (error) {

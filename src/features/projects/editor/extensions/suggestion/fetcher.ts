@@ -38,8 +38,6 @@ export const fetcher = async (
 
     const validatedResponse = suggestionResponseSchema.parse(response);
 
-    console.log("AI Suggestion received:", validatedResponse.suggestion);
-
     return validatedResponse.suggestion || null;
   } catch (error) {
     if (error instanceof Error && error.name === "AbortError") {

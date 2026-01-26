@@ -43,12 +43,10 @@ class SuggestionWidget extends WidgetType {
   }
 
   toDOM() {
-    console.log("Creating suggestion widget DOM with text:", this.text);
     const span = document.createElement("span");
     span.textContent = this.text;
     span.style.opacity = "0.4"; // Ghost text appearance
     span.style.pointerEvents = "none"; // Don't interfere with clicks
-    span.style.color = "#888"; // Gray color for visibility
     return span;
   }
 }
@@ -180,15 +178,12 @@ const renderPlugin = ViewPlugin.fromClass(
 
       // Get current suggestion from state
       const suggestion = view.state.field(suggestionState);
-      console.log("Building decoration with suggestion:", suggestion);
-
       if (!suggestion) {
         return Decoration.none;
       }
 
       // Create a widget decoration at the cursor position
       const cursor = view.state.selection.main.head;
-      console.log("Creating widget at cursor:", cursor);
       return Decoration.set([
         Decoration.widget({
           widget: new SuggestionWidget(suggestion),
