@@ -49,7 +49,7 @@ export const EditorView = ({ projectId }: { projectId: Id<"projects"> }) => {
         )}
         {isActiveFileText && (
           <CodeEditor
-            key={activeFile._id}
+            key={`${activeFile._id}-${activeFile.updatedAt}`}
             fileName={activeFile.name}
             initialValue={activeFile.content}
             onChange={(content: string) => {
