@@ -157,7 +157,7 @@ export const processMessage = inngest.createFunction(
       description: "An expert AI coding assistant",
       system: systemPrompt,
        model: anthropic({
-        model: "claude-opus-4-20250514",
+        model: "claude-3-5-sonnet-20241022",
         defaultParameters: { temperature: 0.3, max_tokens: 16000 }
        }),
        tools: [
