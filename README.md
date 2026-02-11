@@ -1,1 +1,1 @@
-npx --ignore-scripts=false inngest-cli@latest dev
+npx --ignore-scripts=false inngest-cli@latest dev"# cursor" 
