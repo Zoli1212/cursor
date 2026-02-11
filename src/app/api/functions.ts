@@ -1,5 +1,5 @@
 import { generateText } from "ai";
-import { inngest } from "./client";
+import { inngest } from "@/inngest/client";
 import { anthropic } from "@ai-sdk/anthropic";
 import { firecrawl } from "@/lib/firecrawl";
 
